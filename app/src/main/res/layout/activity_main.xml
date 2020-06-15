@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:onClick="likeView"
+    tools:context=".MainActivity">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="#00FFFFFF"
+        android:visibility="gone"
+        app:lottie_fileName="lottie/lottie_like.json"
+        app:lottie_progress="0" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_tip_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="迪丽热巴，迪丽热巴关注了主播"
+            android:textColor="#0099cc"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:onClick="left2Right"
+            android:text="从右到左移动" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="addLikeView"
+            android:text="星星动画" />
+
+        <ImageView
+            android:id="@+id/iv_gif"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintCircleRadius="10dp"
+            app:layout_constraintDimensionRatio="H,1:1" />
+
+        <ImageView
+            android:id="@+id/iv_live_ing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gaodun_live" />
+<!--
+        <FrameLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:onClick="likeView">
+
+            <ImageView
+                android:id="@+id/tv_like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:src="@mipmap/img_discovery_big_liked" />
+
+        </FrameLayout>-->
+
+    </LinearLayout>
+
+    <com.seven.anim.widget.FlowLikeView
+        android:id="@+id/flowLikeView"
+        android:layout_width="80dp"
+        android:layout_height="300dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true">
+
+    </com.seven.anim.widget.FlowLikeView>
+
+
+</RelativeLayout>
