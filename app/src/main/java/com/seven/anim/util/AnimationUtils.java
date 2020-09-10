@@ -9,12 +9,14 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.CycleInterpolator;
 import android.view.animation.LinearInterpolator;
+import android.view.animation.OvershootInterpolator;
 import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.seven.anim.R;
 
 public final class AnimationUtils {
 
@@ -99,14 +101,14 @@ public final class AnimationUtils {
         view.startAnimation(rotate);
     }
 
-    // 从左到右
+    // 从左到右渐变动画
     public static void anim_left2right(View view) {
         ScaleAnimation scaleAnimation = new ScaleAnimation(0, 1, 1, 1);
         scaleAnimation.setDuration(300);
         view.startAnimation(scaleAnimation);
     }
 
-    // 从右到左
+    // 从右到左渐变动画
     public static void anim_right2left(View view) {
         ScaleAnimation scaleAnimation = new ScaleAnimation(0, 1, 1, 1,
                 Animation.RELATIVE_TO_SELF, 1,
@@ -116,8 +118,57 @@ public final class AnimationUtils {
         view.startAnimation(scaleAnimation);
     }
 
+
+    private static void shakeAnim(final View view) {
+        TranslateAnimation animation = new TranslateAnimation(0, 10, 0, 0);
+        animation.setInterpolator(new OvershootInterpolator());
+        animation.setDuration(200);
+        animation.setRepeatCount(1);
+        animation.setRepeatMode(Animation.REVERSE);
+        animation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (view != null) {
+                            view.startAnimation(android.view.animation.AnimationUtils.loadAnimation(view.getContext(), R.anim.anim_show_alpha_1_0));
+                            view.setVisibility(View.GONE);
+                        }
+                    }
+                }, 1000);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        view.startAnimation(animation);
+    }
+
     // 从左到右
     public static void r2l(final View view) {
+        final TranslateAnimation animation = new TranslateAnimation(-500, 20, 0, 0);
+        animation.setDuration(1000);
+        animation.setRepeatMode(Animation.REVERSE);//设置反方向执行
+        view.startAnimation(animation);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                shakeAnim(view);
+            }
+        }, 1000);
+    }
+
+    // 从右到左
+    public static void l2r(final View view) {
         final TranslateAnimation animation = new TranslateAnimation(1080, 0, 0, 0);
         animation.setDuration(2000);
         animation.setRepeatMode(Animation.REVERSE);//设置反方向执行
@@ -148,10 +199,8 @@ public final class AnimationUtils {
                 });
                 view.startAnimation(animation);
             }
-        }, 3000);
-
+        }, 2000);
     }
-
 
     // 从上到下
     public static void anim_up2down(View view) {

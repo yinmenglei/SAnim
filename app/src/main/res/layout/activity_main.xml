@@ -18,17 +18,16 @@
         app:lottie_fileName="lottie/lottie_like.json"
         app:lottie_progress="0" />
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tv_tip_msg"
+            android:id="@+id/tv_msg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="迪丽热巴，迪丽热巴关注了主播"
+            android:text="迪丽热巴正在去购买"
             android:textColor="#0099cc"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -37,7 +36,25 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
+            android:onClick="right2Left"
+            android:text="从左到右出现-抖动-渐变消失" />
+
+        <TextView
+            android:id="@+id/tv_tip_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="迪丽热巴，迪丽热巴关注了主播"
+            android:textColor="#0099cc"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="invisible" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:onClick="left2Right"
             android:text="从右到左移动" />
 
@@ -47,10 +64,27 @@
             android:onClick="addLikeView"
             android:text="星星动画" />
 
+        <com.seven.anim.widget.SlideSwitcher
+            android:id="@+id/btn_switch"
+            android:layout_width="60dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="15dp" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton"
+            android:layout_width="67dp"
+            android:layout_height="29dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/toggle_drawable_selector"
+            android:textOff="@null"
+            android:textOn="@null" />
+
         <ImageView
             android:id="@+id/iv_gif"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_marginTop="20dp"
             android:scaleType="centerCrop"
             app:layout_constraintCircleRadius="10dp"
             app:layout_constraintDimensionRatio="H,1:1" />
@@ -60,23 +94,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/gaodun_live" />
-<!--
-        <FrameLayout
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:onClick="likeView">
 
-            <ImageView
-                android:id="@+id/tv_like"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:includeFontPadding="false"
-                android:maxLines="1"
-                android:src="@mipmap/img_discovery_big_liked" />
+        <!--
+                <FrameLayout
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:onClick="likeView">
 
-        </FrameLayout>-->
+                    <ImageView
+                        android:id="@+id/tv_like"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:src="@mipmap/img_discovery_big_liked" />
+
+                </FrameLayout>-->
 
     </LinearLayout>
 
@@ -85,9 +120,6 @@
         android:layout_width="80dp"
         android:layout_height="300dp"
         android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true">
-
-    </com.seven.anim.widget.FlowLikeView>
-
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>
