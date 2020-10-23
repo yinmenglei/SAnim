@@ -1,6 +1,7 @@
 package com.seven.anim;
 
 import android.animation.Animator;
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
@@ -47,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
         toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Toast.makeText(MainActivity.this, "isChecked=" + isChecked, 1000).show();
-
                 if (isChecked) {
                 } else {
                 }
@@ -62,14 +61,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onStatusChanged(SlideSwitcher view, boolean isOpen) {
                 Toast.makeText(MainActivity.this, "isOpen=" + isOpen, 1000).show();
-                if (isOpen) {
-
-                } else {
-
-                }
             }
         });
-
     }
 
     private void setImage() {
@@ -122,6 +115,10 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void editTextInput(View view) {
+        startActivity(new Intent(this, InputFilterActivity.class));
     }
 
 }

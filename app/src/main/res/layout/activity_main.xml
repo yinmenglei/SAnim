@@ -95,6 +95,14 @@
             android:layout_height="wrap_content"
             android:background="@drawable/gaodun_live" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:onClick="editTextInput"
+            android:text="编辑框表情特殊符号限制输入"
+            tools:ignore="OnClick" />
+
         <!--
                 <FrameLayout
                     android:layout_width="60dp"
@@ -119,7 +127,7 @@
         android:id="@+id/flowLikeView"
         android:layout_width="80dp"
         android:layout_height="300dp"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true" />
 
 </RelativeLayout>
