@@ -38,7 +38,7 @@ public class LikeProgressBarActivity extends AppCompatActivity {
         myHandler = new Handler() {
             @Override
             public void handleMessage(Message msg) {
-                tvProgress.setText((msg.arg1 + "%)"));
+                tvProgress.setText((msg.arg1 + "%"));
 
                 if (msg.what == 0x222) {
                     Toast.makeText(LikeProgressBarActivity.this, "完成", Toast.LENGTH_SHORT).show();
