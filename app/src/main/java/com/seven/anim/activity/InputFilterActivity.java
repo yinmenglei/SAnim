@@ -1,4 +1,4 @@
-package com.seven.anim;
+package com.seven.anim.activity;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -7,7 +7,8 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.seven.anim.widget.SEditText;
+import com.seven.anim.R;
+import com.seven.anim.widget.InputFilterEditText;
 
 public class InputFilterActivity extends AppCompatActivity {
 
@@ -20,7 +21,7 @@ public class InputFilterActivity extends AppCompatActivity {
     }
 
     private void initViewAction() {
-        SEditText editInput = findViewById(R.id.edit_input);
+        InputFilterEditText editInput = findViewById(R.id.edit_input);
         editInput.addTextChangedListener(new TextWatcher() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {

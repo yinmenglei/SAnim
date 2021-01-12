@@ -20,7 +20,12 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".InputFilterActivity" />
+        <activity android:name=".activity.InputFilterActivity" />
+        <activity android:name=".activity.LikeProgressBarActivity" />
+        <activity android:name=".activity.CustomAnimActivity" />
+
+        <activity android:name=".anim.SampleActivity" />
+        <activity android:name=".anim.IndicatorActivity" />
     </application>
 
 </manifest>

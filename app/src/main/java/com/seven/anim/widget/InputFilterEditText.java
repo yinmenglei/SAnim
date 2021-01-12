@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 
 
 @SuppressLint("AppCompatCustomView")
-public class SEditText extends EditText {
+public class InputFilterEditText extends EditText {
 
     // 不允许输入表情-不允许输入特出字符
     private static final String spe = "[\ud83c\udc00-\ud83c\udfff]|[\ud83d\udc00-\ud83d\udfff]"
@@ -39,15 +39,15 @@ public class SEditText extends EditText {
         Toast.makeText(getContext(), "不支持此输入", Toast.LENGTH_SHORT).show();
     }
 
-    public SEditText(Context context) {
+    public InputFilterEditText(Context context) {
         this(context, null);
     }
 
-    public SEditText(Context context, AttributeSet attrs) {
+    public InputFilterEditText(Context context, AttributeSet attrs) {
         this(context, attrs, android.R.attr.editTextStyle);
     }
 
-    public SEditText(Context context, AttributeSet attrs, int defStyle) {
+    public InputFilterEditText(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init();
     }
