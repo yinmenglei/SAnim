@@ -16,7 +16,15 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:onClick="customAnim"
-            android:text="表情特殊符号输入限制"
+            android:text="CustomAnim"
+            tools:ignore="OnClick" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:onClick="roundView"
+            android:text="RoundView"
             tools:ignore="OnClick" />
 
         <Button

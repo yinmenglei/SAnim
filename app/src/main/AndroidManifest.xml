@@ -21,6 +21,7 @@
         </activity>
 
         <activity android:name=".activity.InputFilterActivity" />
+        <activity android:name=".activity.RoundViewActivity" />
         <activity android:name=".activity.LikeProgressBarActivity" />
         <activity android:name=".activity.CustomAnimActivity" />
 
