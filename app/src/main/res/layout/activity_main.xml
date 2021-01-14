@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:onClick="editTextInput"
-            android:text="编辑框表情特殊符号限制输入"
+            android:text="表情特殊符号限制输入"
             tools:ignore="OnClick" />
 
         <Button
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:onClick="likeProgressBar"
-            android:text="自定义仿真进度条"
+            android:text="仿真进度"
             tools:ignore="OnClick" />
 
     </LinearLayout>
