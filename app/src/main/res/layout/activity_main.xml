@@ -15,8 +15,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:onClick="testARouter"
+            android:text="路由测试"
+            tools:ignore="OnClick" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:onClick="customAnim"
-            android:text="CustomAnim"
+            android:text="自定义动画"
             tools:ignore="OnClick" />
 
         <Button
@@ -24,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:onClick="roundView"
-            android:text="RoundView"
+            android:text="自定义圆角"
             tools:ignore="OnClick" />
 
         <Button

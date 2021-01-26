@@ -1,16 +1,16 @@
 package com.seven.anim.activity;
 
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.flyco.roundview.RoundTextView;
 import com.seven.anim.R;
-import com.seven.anim.widget.InputFilterEditText;
+import com.seven.anim.constant.AppConstant;
 
+
+@Route(path = AppConstant.APP_ROUND_VIEW)
 public class RoundViewActivity extends AppCompatActivity {
 
     RoundTextView roundTextView;
@@ -19,13 +19,6 @@ public class RoundViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_round_view);
-
-        initView();
-    }
-
-
-    private void initView() {
-
     }
 
 }
